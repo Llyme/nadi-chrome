@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "NADI Page Reader",
+  "version": "0.1.0",
+  "description": "Tells the NADI desktop app what kind of page you are on and where you are in it. It talks only to NADI on this PC (127.0.0.1) and sends nothing anywhere else.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqsym6vaJkIFS8YxKn7HHSDJ+5hFGUca+IYGnFuyCHxJDnbUw14xXKfwIBV9fu/WoNx/1vxIPlE1Qp2aJTVquJcFyesVOE/U3qJSJL82+cDrvB2arsFrF+hiV8jVGqOucd7C3dq6S99SHwVPllXU7oiYDg1jq6/ObZ+79debR0UejoP1SfIJQVreNjpmmGEeC1llqdRAGjW6oJOQWZR7PQZzJ7evau+9PESp/rQySTVoN8mFuGmFIBv7Mdb/2JZ6hGrMALOFLtomILzSC2B1hxRVtKObVRkYhUi1V5pepKO8tuxIOstQNNojgpXGrlnjlpNmnl88rGJvzvsECuSflYQIDAQAB",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "tabs",
+    "alarms",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/extract.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "NADI Page Reader",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "incognito": "not_allowed"
+}

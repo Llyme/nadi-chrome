@@ -1,0 +1,15 @@
+:root { color-scheme: light dark; --bg: #f6f7f9; --ink: #15171c; --dim: #5d6372; --line: #d6dae3; --accent: #14805a; --bad: #b0413a; }
+@media (prefers-color-scheme: dark) { :root { --bg: #14161c; --ink: #e8eaf0; --dim: #a0a7b8; --line: #2a2f3a; --accent: #5ac88c; --bad: #e87a7a; } }
+* { box-sizing: border-box; }
+body { width: 300px; margin: 0; padding: 14px; background: var(--bg); color: var(--ink); font: 13px/1.5 "Segoe UI", system-ui, sans-serif; }
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+h1 { margin: 0; font-size: 15px; font-weight: 650; }
+.pill { width: 30px; height: 18px; border-radius: 9px; background: #0b0b0d; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.pill b { width: 4px; height: 8px; border-radius: 2px; background: #fff; }
+.state { margin: 0; font-weight: 600; } .state.ok { color: var(--accent); } .state.off { color: var(--bad); }
+.hint { margin: 4px 0 10px; color: var(--dim); min-height: 1.5em; }
+.row { display: grid; gap: 8px; }
+button { padding: 8px 12px; border-radius: 9px; border: 1px solid var(--line); background: transparent; color: inherit; font: inherit; cursor: pointer; text-align: left; }
+button:hover { border-color: var(--accent); }
+button[aria-pressed="true"] { background: var(--accent); border-color: transparent; color: #07110b; font-weight: 600; }
+.foot { margin: 12px 0 0; color: var(--dim); font-size: 11.5px; }

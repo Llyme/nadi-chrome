@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>How to put Caddy in front of a Node app | Caddy tutorials</title></head>
+<body><main><h1>How to put Caddy in front of a Node app</h1><p>This guide takes about fifteen minutes and needs a server with a domain pointing at it.</p>
+<h2>Step 1: Install Caddy</h2><p>Use your package manager.</p><div style="height:700px"></div>
+<h2>Step 2: Write the Caddyfile</h2><p>Create a file called Caddyfile.</p><div style="height:700px"></div>
+<h2>Step 3: Add the site block</h2><pre>example.com {
+  reverse_proxy localhost:3000
+}</pre><button>Copy</button><div style="height:900px"></div>
+<h2>Step 4: Reload the config</h2><p>Run caddy reload.</p><button>Next step</button></main></body></html>
